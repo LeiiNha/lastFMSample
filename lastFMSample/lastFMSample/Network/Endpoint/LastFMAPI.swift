@@ -45,11 +45,11 @@ extension LastFMAPI: EndpointType {
             params["method"] = "album.search"
             params["limit"] = limit
             params["page"] = page
-            params["album"] = album.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            params["album"] = album
         case .getInfo(let album, let artist):
             params["method"] = "album.getinfo"
-            params["album"] = album.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            params["artist"] = artist.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            params["album"] = album
+            params["artist"] = artist
         }
         params["api_key"] = API_KEY
         params["format"] = "json"

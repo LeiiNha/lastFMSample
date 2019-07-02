@@ -72,6 +72,7 @@ final class Router<Endpoint: EndpointType>: NetworkRouter {
 
             if let urlParameters = urlParameters {
                 try URLParameterEncoder.encode(urlRequest: &request, with: urlParameters)
+
             }
         } catch {
             throw error
