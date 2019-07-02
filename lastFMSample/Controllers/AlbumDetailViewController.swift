@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 final class AlbumDetailViewController: UIViewController {
     
@@ -37,6 +38,7 @@ private extension AlbumDetailViewController {
         
         self.addLabel()
         self.addLikeButton()
+        self.addShareButton()
     }
     
     func addLabel() {
@@ -69,9 +71,29 @@ private extension AlbumDetailViewController {
         likeBtn.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
                                         constant: -Spacing.xLarge).isActive = true
     }
+
+    func addShareButton() {
+
+        let shareBtn = UIButton(type: .custom)
+        shareBtn.setTitle("Share", for: .normal)
+        shareBtn.addTarget(self, action: #selector(handleShareBtnPress(_:)), for: .touchUpInside)
+        self.view.addSubview(shareBtn)
+        shareBtn.translatesAutoresizingMaskIntoConstraints = false
+        shareBtn.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+        shareBtn.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
+        shareBtn.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        shareBtn.centerYAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+
+    }
     
     @objc func handleBtnPress(_ sender: UIButton) {
         self.viewModel.handleBtnPress(sender)
         sender.setImage(self.viewModel.getImageForAlbum(), for: .normal)
+    }
+
+    @objc func handleShareBtnPress(_ sender: UIButton) {
+        let activityVC = UIActivityViewController(activityItems: [self.viewModel.getTextForAlbum()], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
     }
 }
