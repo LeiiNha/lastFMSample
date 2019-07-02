@@ -1,8 +1,8 @@
 //
 //  NetworkManager.swift
-//  hereApi
+//  lastFMSample
 //
-//  Created by Erica Geraldes on 16/06/2019.
+//  Created by Erica Geraldes on 01/07/2019.
 //  Copyright © 2019 Erica Geraldes. All rights reserved.
 //
 

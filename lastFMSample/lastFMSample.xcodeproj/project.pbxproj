@@ -41,6 +41,7 @@
 		CC78524122CABC76006E3BC5 /* AlbumResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78524022CABC76006E3BC5 /* AlbumResultViewModel.swift */; };
 		CC78524322CAC3E9006E3BC5 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78524222CAC3E9006E3BC5 /* AlbumDetailViewController.swift */; };
 		CC78524522CAC513006E3BC5 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78524422CAC513006E3BC5 /* AlbumDetailViewModel.swift */; };
+		ED6D87AB22CB49CE00D821FC /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6D87AA22CB49CE00D821FC /* FavoritesManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		CC78524022CABC76006E3BC5 /* AlbumResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumResultViewModel.swift; sourceTree = "<group>"; };
 		CC78524222CAC3E9006E3BC5 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		CC78524422CAC513006E3BC5 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
+		ED6D87AA22CB49CE00D821FC /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				CC32BA5B22CAA3D60050867F /* lastFMSampleTests.swift */,
 				CC32BA5D22CAA3D60050867F /* Info.plist */,
+				ED6D87AA22CB49CE00D821FC /* FavoritesManagerTests.swift */,
 			);
 			path = lastFMSampleTests;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC32BA5C22CAA3D60050867F /* lastFMSampleTests.swift in Sources */,
+				ED6D87AB22CB49CE00D821FC /* FavoritesManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
