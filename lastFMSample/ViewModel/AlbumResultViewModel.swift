@@ -45,6 +45,19 @@ final class AlbumResultViewModel {
             completion(album)
         })
     }
+
+    private func downloadImage(from url: URL, completion: @escaping (UIImage?)  -> ()) {
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async() {
+                completion(UIImage(data: data))
+            }
+        }
+    }
+
+    private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
 }
 
 extension AlbumResultViewModel: AlbumResultDelegate {
@@ -73,6 +86,12 @@ extension AlbumResultViewModel: AlbumResultDelegate {
             else { return UITableViewCell() }
         cell.selectionStyle = .none
         cell.name = self.albumResults?[indexPath.row].name
+        if let imageUrl = self.albumResults?[indexPath.row].image.first?.url, let url = URL(string: imageUrl) {
+            downloadImage(from: url, completion: { image in
+                cell.albumImage = image
+            })
+        }
+
         return cell
     }
     
